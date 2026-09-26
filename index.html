@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxe Proveedores</title>
+<meta name="description" content="Accede a nuestra selección de proveedores. 10 proveedores disponibles por 19,99 € cada uno.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;background:#080808;color:#fff;line-height:1.5}
+a{text-decoration:none;color:inherit}
+.container{width:min(1100px,92%);margin:auto}
+header{padding:22px 0;border-bottom:1px solid #222;position:sticky;top:0;background:rgba(8,8,8,.94);backdrop-filter:blur(12px);z-index:10}
+.nav{display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:21px;font-weight:800;letter-spacing:.5px}.logo span{color:#d4af37}
+.cart{background:#fff;color:#000;padding:10px 16px;border-radius:999px;font-weight:700}
+.hero{text-align:center;padding:80px 0 55px}
+.badge{display:inline-block;border:1px solid #3a3a3a;padding:7px 13px;border-radius:99px;color:#d4af37;font-size:13px;margin-bottom:18px}
+h1{font-size:clamp(38px,8vw,72px);line-height:1.02;margin-bottom:18px}
+.hero p{max-width:650px;margin:auto;color:#aaa;font-size:17px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;padding:20px 0 70px}
+.card{background:#111;border:1px solid #252525;border-radius:20px;padding:24px;transition:.2s}
+.card:hover{transform:translateY(-3px);border-color:#555}
+.number{font-size:12px;color:#777}.card h2{margin:7px 0;font-size:22px}
+.desc{color:#999;font-size:14px;min-height:44px}
+.price{font-size:26px;font-weight:800;margin:18px 0}.price small{font-size:13px;color:#777;font-weight:400}
+.buy{width:100%;border:0;background:#d4af37;color:#080808;padding:14px;border-radius:12px;font-size:15px;font-weight:800;cursor:pointer}
+.info{background:#111;border:1px solid #252525;border-radius:20px;padding:28px;margin-bottom:70px}
+.info h2{margin-bottom:10px}.info p{color:#aaa}.bizum{color:#d4af37;font-size:25px;font-weight:800;margin:10px 0}
+footer{border-top:1px solid #222;padding:28px 0;color:#777;text-align:center;font-size:13px}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:20;padding:20px;align-items:center;justify-content:center}
+.modal.open{display:flex}.box{width:min(470px,100%);background:#151515;border:1px solid #333;border-radius:22px;padding:28px}
+.box h2{margin-bottom:8px}.box p{color:#aaa;margin:8px 0}
+.steps{margin:18px 0;padding-left:20px;color:#ddd}.steps li{margin:8px 0}
+.close{float:right;background:none;color:#aaa;border:0;font-size:25px;cursor:pointer}
+.copy{background:#222;color:#fff;border:1px solid #333;padding:10px 12px;border-radius:9px;cursor:pointer;margin-left:5px}
+@media(max-width:650px){.grid{grid-template-columns:1fr}.hero{padding:60px 0 35px}.card{padding:20px}}
+</style>
+</head>
+<body>
+<header>
+<div class="container nav">
+<div class="logo">LUXE PROVEEDORES</div>
+<a class="cart" href="#proveedores">10 disponibles</a>
+</div>
+</header>
+
+<main>
+<section class="hero container">
+<div class="badge">ACCESO DIGITAL</div>
+<h1>Encuentra tus próximos proveedores.</h1>
+<p>Selecciona la categoría que te interese y realiza el pago mediante Bizum. Recibirás las instrucciones de acceso después de confirmar el pago.</p>
+</section>
+
+<section id="proveedores" class="container">
+<div class="grid">
+
+<article class="card">
+<div class="number">PROVEEDOR 01</div>
+<h2>Zapatillas</h2>
+<p class="desc">Catálogo de proveedores de zapatillas.</p>
+<div class="price">19,99 € <small>pago único</small></div>
+<button class="buy" onclick="openModal(1)">Comprar Zapatillas</button>
+</article>
+
+
+<article class="card">
+<div class="number">PROVEEDOR 02</div>
+<h2>Camisetas</h2>
+<p class="desc">Catálogo de proveedores de camisetas y ropa.</p>
+<div class="price">19,99 € <small>pago único</small></div>
+<button class="buy" onclick="openModal(2)">Comprar Camisetas</button>
+</article>
+
+
+<article class="card">
+<div class="number">PROVEEDOR 03</div>
+<h2>Relojes</h2>
+<p class="desc">Catálogo de proveedores de relojes.</p>
+<div class="price">19,99 € <small>pago único</small></div>
+<button class="buy" onclick="openModal(3)">Comprar Relojes</button>
+</article>
+
+
+<article class="card">
+<div class="number">PROVEEDOR 04</div>
+<h2>Colonias</h2>
+<p class="desc">Catálogo de proveedores de perfumes y colonias.</p>
+<div class="price">19,99 € <small>pago único</small></div>
+<button class="buy" onclick="openModal(4)">Comprar Colonias</button>
+</article>
+
+
+<article class="card">
+<div class="number">PROVEEDOR 05</div>
+<h2>Legos</h2>
+<p class="desc">Catálogo de proveedores de productos tipo LEGO y construcción.</p>
+<div class="price">19,99 € <small>pago único</small></div>
+<button class="buy" onclick="openModal(5)">Comprar Legos</button>
+</article>
+
+
+<article class="card">
+<div class="number">PROVEEDOR 06</div>
+<h2>Vapers</h2>
+<p class="desc">Catálogo de proveedores de vapers y productos relacionados.</p>
+<div class="price">19,99 € <small>pago único</small></div>
+<button class="buy" onclick="openModal(6)">Comprar Vapers</button>
+</article>
+
+
+<article class="card">
+<div class="number">PROVEEDOR 07</div>
+<h2>Bolsos</h2>
+<p class="desc">Catálogo de proveedores de bolsos y accesorios.</p>
+<div class="price">19,99 € <small>pago único</small></div>
+<button class="buy" onclick="openModal(7)">Comprar Bolsos</button>
+</article>
+
+
+<article class="card">
+<div class="number">PROVEEDOR 08</div>
+<h2>Gorras y cinturones</h2>
+<p class="desc">Catálogo de proveedores de gorras y cinturones.</p>
+<div class="price">19,99 € <small>pago único</small></div>
+<button class="buy" onclick="openModal(8)">Comprar Gorras y cinturones</button>
+</article>
+
+
+<article class="card">
+<div class="number">PROVEEDOR 09</div>
+<h2>Electrónica todo tipo</h2>
+<p class="desc">Catálogo de proveedores de electrónica de diferentes categorías.</p>
+<div class="price">19,99 € <small>pago único</small></div>
+<button class="buy" onclick="openModal(9)">Comprar Electrónica todo tipo</button>
+</article>
+
+
+<article class="card">
+<div class="number">PROVEEDOR 10</div>
+<h2>Gafas</h2>
+<p class="desc">Catálogo de proveedores de gafas y accesorios.</p>
+<div class="price">19,99 € <small>pago único</small></div>
+<button class="buy" onclick="openModal(10)">Comprar Zapatillas0</button>
+</article>
+
+</div>
+
+<div class="info">
+<h2>¿Cómo funciona?</h2>
+<p>1. Elige uno de los 10 proveedores.</p>
+<p>2. Pulsa “Comprar” y realiza un Bizum de <strong>19,99 €</strong>.</p>
+<p>3. Guarda el comprobante y envía la confirmación siguiendo las instrucciones que aparecen tras la compra.</p>
+<div class="bizum">Bizum: 624 589 138</div>
+</div>
+</section>
+</main>
+
+<footer>© 2026 Proveedores+ · Información comercial</footer>
+
+<div class="modal" id="modal">
+<div class="box">
+<button class="close" onclick="closeModal()">×</button>
+<h2 id="modalTitle">Comprar proveedor</h2>
+<p>Precio: <strong>19,99 €</strong></p>
+<ol class="steps">
+<li>Abre la app de tu banco.</li>
+<li>Realiza un Bizum de <strong>19,99 €</strong> al <strong>624 589 138</strong>.</li>
+<li>En el concepto, indica la categoría que has comprado.</li>
+<li>Conserva el justificante del pago y contacta con el vendedor para recibir el acceso.</li>
+</ol>
+<button class="buy" onclick="copyBizum()">Copiar número de Bizum</button>
+<p id="copied" style="display:none;color:#d4af37;margin-top:12px">Número copiado.</p>
+</div>
+</div>
+
+<script>
+let selected=0;
+function openModal(n){
+ selected=n;
+ const names=['','Zapatillas','Camisetas','Relojes','Colonias','Legos','Vapers','Bolsos','Gorras y cinturones','Electrónica todo tipo','Gafas']; document.getElementById('modalTitle').textContent='Comprar '+names[n];
+ document.getElementById('modal').classList.add('open');
+}
+function closeModal(){document.getElementById('modal').classList.remove('open')}
+function copyBizum(){
+ navigator.clipboard.writeText('624589138');
+ document.getElementById('copied').style.display='block';
+}
+document.getElementById('modal').addEventListener('click',e=>{
+ if(e.target.id==='modal') closeModal();
+});
+</script>
+</body>
+</html>
